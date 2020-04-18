@@ -12,7 +12,7 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
-      args: ['{{ include "simplefrontend-service.fullname" . }}:{{ .Values.frontend.service.port }}/ping']
+      args: ['{{ include "simplefrontend-service.fullname" . }}:{{ .Values.frontend.service.port }}/']
   restartPolicy: Never
 {{- end }}
 ---
@@ -30,6 +30,6 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
-      args: ['{{ include "simplebackend-service.fullname" . }}:8080/ping']
+      args: ['{{ include "simplebackend-service.fullname" . }}:8080/']
   restartPolicy: Never
 {{- end }}
